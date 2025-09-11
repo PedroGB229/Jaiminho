@@ -1,90 +1,107 @@
+/* === Layout Geral === */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
   margin: 0;
-  background: #f0f4f8;
-  color: #1e293b;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 900px;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #0f172a;
+  font-size: 22px;
+  color: #1f2937;
 }
 
+/* === Ações === */
 .actions {
-  text-align: right;
-  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.btn-primary {
-  background-color: #10b981;
-  color: white;
-  padding: 8px 14px;
+.btn-primary,
+.btn-ghost {
+  padding: 10px 18px;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+/* Botão Home */
+.btn-ghost {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+}
+.btn-ghost:hover {
+  background: #f9fafb;
+}
+
+/* Botão Cadastrar */
+.btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
 .btn-primary:hover {
-  background-color: #0f766e;
+  background: #2563eb;
 }
 
+/* === Tabela === */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
 }
 
 thead {
-  background-color: #0f172a;
-  color: white;
+  background: #e5e7eb;
 }
 
-thead th {
-  padding: 12px;
-  text-align: left;
-  font-weight: 600;
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #374151;
 }
 
-tbody td {
-  padding: 12px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
+/* Alternância de cores nas linhas */
 tbody tr:nth-child(even) {
-  background-color: #f8fafc;
+  background: #f9fafb;
 }
 
-.color-badge {
-  display: inline-flex;       /* flex para alinhar itens horizontalmente */
-  align-items: center;        /* centraliza verticalmente */
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 13px;
-  color: white;
+/* === Status com bolinha === */
+.color-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
 }
 
-.color-badge .dot {
-  width: 10px;
-  height: 10px;
+/* Bolinhas de cor */
+.status-pendente::before,
+.status-aprovado::before,
+.status-recusado::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  margin-right: 6px;
-  flex-shrink: 0;
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Cores */
-.status-pendente { background-color: #facc15; color: #1e1e1e; }
-.status-aprovado { background-color: #10b981; }
-.status-recusado { background-color: #ef4444; }
+.status-pendente::before { background-color: #facc15; } /* Amarelo */
+.status-aprovado::before { background-color: #22c55e; } /* Verde */
+.status-recusado::before { background-color: #ef4444; } /* Vermelho */

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Status de Venda</title>
   <link rel="stylesheet" href="css/cadastrostatusvenda.css">
 </head>
+
 <body>
   <div class="container">
     <h1>Cadastro de Status de Venda</h1>
@@ -15,10 +17,12 @@
       <input type="text" id="codigo" name="codigo" placeholder="Ex: ST01" required>
 
       <label for="descricao">Descrição</label>
-      <input type="text" id="descricao" name="descricao" placeholder="Ex: Pendente, Aprovado..." required>
-
-      <label for="cor">Cor de Status</label>
-      <input type="color" id="cor" name="cor" value="#10b981">
+      <select id="descricao" name="descricao" required>
+        <option value="">Selecione...</option>
+        <option value="Pendente">🟡 Pendente</option>
+        <option value="Aprovado">🟢 Aprovado</option>
+        <option value="Recusado">🔴 Recusado</option>
+      </select>    
 
       <div class="actions">
         <button type="submit" class="btn-primary">Salvar</button>
@@ -52,4 +56,5 @@
     });
   </script>
 </body>
+
 </html>
