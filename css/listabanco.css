@@ -1,0 +1,29 @@
+.bnt{
+    border: none;
+    color: whitesmoke;
+    background-color: green;
+    border-radius: 8px;
+    padding: 0.5%;
+    width: 5%;
+    box-shadow: 1px 2px 3px grey;
+    text-decoration: default;
+    text-align: center;
+
+}
+
+.table {
+    border: 3px solid black;
+    font-size: 15px;
+}
+
+.thead {
+    border: 2px solid black;
+    font-size: 15px;
+    color: black;
+}
+
+.bnt-success:hover {
+    background-color: darkgreen;
+    transition: 0.4s;
+    box-shadow: 1px 2px 3px;
+}
