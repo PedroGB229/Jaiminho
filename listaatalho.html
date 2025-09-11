@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <style>
+        .open-sans-uniquifier {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+    </style>
+    <title>Lista de atalhos</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-2">
+                <h5 class="card-title">Atalhos Cadastrados</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a href="atalho.html" class="btn btn-success">
+                            <i class="fa-solid fa-plus"></i>
+                            Cadastro
+                        </a>
+                        <a href="index.html" class="btn btn-warning">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Voltar
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="search" class="form-control" id="search" name="search"
+                                        placeholder="Pesquisar..." autofocus>
+                                    <label for="search">Pesquisar...</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <table class="table table-striped table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Atalho 1</td>
+                                            <td>
+                                                <a href="atalho.html?id=1" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <a href="atalho.html?id=1" class="btn btn-danger">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Atalho 2</td>
+                                            <td>
+                                                <a href="atalho.html?id=2" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <a href="atalho.html?id=2" class="btn btn-danger">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Atalho 3</td>
+                                            <td>
+                                                <a href="atalho.html?id=3" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <a href="atalho.html?id=3" class="btn btn-danger">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+</body>
+
+</html>
