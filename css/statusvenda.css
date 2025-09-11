@@ -1,0 +1,129 @@
+/* === Layout Geral === */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 900px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #1f2937;
+}
+
+/* === Ações === */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn-primary,
+.btn-ghost {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Botão Home */
+.btn-ghost {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+}
+.btn-ghost:hover {
+  background: #f9fafb;
+}
+
+/* Botão Cadastrar */
+.btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #2563eb;
+}
+
+/* === Tabela === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background: #e5e7eb;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Alternância de cores nas linhas */
+tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* === Status com bolinha === */
+.color-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+}
+
+/* Bolinhas de cor */
+.status-pendente::before,
+.status-aprovado::before,
+.status-recusado::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-pendente::before { background-color: #facc15; } /* Amarelo */
+.status-aprovado::before { background-color: #22c55e; } /* Verde */
+.status-recusado::before { background-color: #ef4444; } /* Vermelho */
+
+/* === Barra de Pesquisa === */
+.search-box {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}

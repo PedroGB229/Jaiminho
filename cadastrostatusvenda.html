@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Status de Venda</title>
+  <link rel="stylesheet" href="css/cadastrostatusvenda.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Cadastro de Status de Venda</h1>
+
+    <form id="cadastroForm">
+      <label for="codigo">Código</label>
+      <input type="text" id="codigo" name="codigo" placeholder="Ex: ST01" required>
+
+      <label for="descricao">Descrição</label>
+      <select id="descricao" name="descricao" required>
+        <option value="">Selecione...</option>
+        <option value="Pendente">🟡 Pendente</option>
+        <option value="Aprovado">🟢 Aprovado</option>
+        <option value="Recusado">🔴 Recusado</option>
+      </select>    
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Salvar</button>
+        <a href="tabelastatusvenda.html" class="btn-ghost">Voltar</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="spinner"></div>
+    <p>Salvo com sucesso!</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('cadastroForm');
+    const popup = document.getElementById('popup');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Mostrar popup
+      popup.style.display = 'flex';
+
+      // Espera 3 segundos
+      setTimeout(() => {
+        popup.style.display = 'none';
+        // Voltar para a tabela
+        window.location.href = 'tabelastatusvenda.html';
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
