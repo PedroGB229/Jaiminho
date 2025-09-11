@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Conta Bancária</title>
+    <link rel="stylesheet" href="cadastrocontabancaria.css">
+</head>
+<body>
+    <h1>Cadastro de Conta Bancária</h1>
+   <form>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 1000px; margin: 0 auto;">
+        <div style="flex: 1 1 45%;">
+            <label for="codigo">Código</label>
+            <input type="text" id="codigo" name="codigo" style="width: 100%;">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" style="width: 100%;">
+
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" style="width: 100%;">
+
+            <label for="proprietario">Proprietário</label>
+            <input type="text" id="proprietario" name="proprietario" style="width: 100%;">
+        </div>
+
+        <div style="flex: 1 1 45%;">
+            <label for="agencia">Agência</label>
+            <input type="text" id="agencia" name="agencia" style="width: 100%;">
+
+            <label for="numero">Número da Conta</label>
+            <input type="text" id="numero" name="numero" style="width: 100%;">
+
+            <label for="tipo">Tipo de Conta</label>
+            <select id="tipo" name="tipo" style="width: 100%; padding: 10px;">
+                <option value="">Selecione</option>
+                <option value="corrente">Corrente</option>
+                <option value="poupanca">Poupança</option>
+                <option value="salario">Salário</option>
+            </select>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="listagemcontabancaria.html" class="btn btn-cancelar" style="background-color: #dc3545; color: white; padding: 10px 16px; border-radius: 5px; text-decoration: none;">Cancelar</a>
+    </div>
+</form>
+</body>
+</html>
+

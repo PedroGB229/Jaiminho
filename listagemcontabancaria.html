@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Contas Bancárias</title>
+    <link rel="stylesheet" href="cadastrocontabancaria.css">
+    <style>
+        .search-box {
+            max-width: 400px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 95%;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #dceeff;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listagem de Contas Bancárias</h1>
+    <div style="text-align: center; margin-bottom: 20px;">
+    <a href="cadastrocontabancaria.html" class="btn cadastro">+ Novo Cadastro</a>
+</div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Pesquisar por nome...">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Proprietário</th>
+                <th>Agência</th>
+                <th>Conta</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody id="listaContas">
+            <!-- Conteúdo gerado via JS -->
+        </tbody>
+    </table>
+
+    <script>
+        // Lista de contas simulada (poderia vir do localStorage)
+        const contas = [
+            {
+                codigo: "001",
+                nome: "João Silva",
+                descricao: "Conta salário",
+                proprietario: "João Silva",
+                agencia: "1234",
+                numero: "56789-0",
+                tipo: "salario"
+            },
+            {
+                codigo: "002",
+                nome: "Maria Oliveira",
+                descricao: "Conta poupança",
+                proprietario: "Maria Oliveira",
+                agencia: "4321",
+                numero: "98765-4",
+                tipo: "poupanca"
+            },
+            {
+                codigo: "003",
+                nome: "Pedro Santos",
+                descricao: "Conta corrente",
+                proprietario: "Pedro Santos",
+                agencia: "2222",
+                numero: "12345-6",
+                tipo: "corrente"
+            }
+        ];
+
+        const tbody = document.getElementById('listaContas');
+        const searchInput = document.getElementById('search');
+
+        function renderContas(filtro = "") {
+            tbody.innerHTML = ""; // limpa a tabela
+
+            contas
+                .filter(conta => conta.nome.toLowerCase().includes(filtro.toLowerCase()))
+                .forEach(conta => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${conta.codigo}</td>
+                        <td>${conta.nome}</td>
+                        <td>${conta.descricao}</td>
+                        <td>${conta.proprietario}</td>
+                        <td>${conta.agencia}</td>
+                        <td>${conta.numero}</td>
+                        <td>${conta.tipo}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+        }
+
+        // Filtra em tempo real conforme digita
+        searchInput.addEventListener('input', () => {
+            renderContas(searchInput.value);
+        });
+
+        // Render inicial
+        renderContas();
+    </script>
+</body>
+</html>
