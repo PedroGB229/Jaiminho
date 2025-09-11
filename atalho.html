@@ -1,14 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro e alteração de atalhos do sistema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <style>
+        .open-sans-uniquifier {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+    </style>
+    <title>Lista de atalhos</title>
 </head>
 
 <body>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mt-2">
+                <h5 class="card-title mb-0">Cadastro e alteração de atalhos do sistema</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-3">
+                <form id="form" name="form" enctype="multipart/form-data">
+                    <div class="card mt-3">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <a href="listaatalho.html" class="btn btn-warning">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                Voltar
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="nome" name="nome"
+                                            placeholder="name@example.com" autofocus>
+                                        <label for="nome">Informe o nome do atalho</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="codigo" name="codigo"
+                                            placeholder="name@example.com" readonly disabled>
+                                        <label for="codigo">Informe o código</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="teclas" name="teclas"
+                                            placeholder="name@example.com">
+                                        <label for="teclas">Precione as teclas para o atalho</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="datetime" class="form-control" id="data_cadastro"
+                                            name="data_cadastro" placeholder="name@example.com">
+                                        <label for="data_cadastro">Informe a data de cadastro</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="datetime" class="form-control" id="data_alteracao"
+                                            name="data_alteracao" placeholder="name@example.com">
+                                        <label for="data_alteracao">Informe a data de alteração</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="descricao"
+                                            name="descricao" style="height: 100px"></textarea>
+                                        <label for="descricao">Informe a descrição para o atalho</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-success">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
 </body>
 
 </html>
