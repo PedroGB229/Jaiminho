@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Conta Bancária</title>
+    <link rel="stylesheet" href="cadastrocontabancaria.css">
+</head>
+<body>
+    <h1>Cadastro de Conta Bancária</h1>
+    <form>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1 1 45%;">
+                <label for="codigo">Código</label>
+                <input type="text" id="codigo" name="codigo">
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome">
+
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao">
+
+                <label for="proprietario">Proprietário</label>
+                <input type="text" id="proprietario" name="proprietario">
+            </div>
+
+            <div style="flex: 1 1 45%;">
+                <label for="agencia">Agência</label>
+                <input type="text" id="agencia" name="agencia">
+
+                <label for="numero">Número da Conta</label>
+                <input type="text" id="numero" name="numero">
+
+                <label for="tipo">Tipo de Conta</label>
+                <select id="tipo" name="tipo">
+                    <option value="">Selecione</option>
+                    <option value="corrente">Corrente</option>
+                    <option value="poupanca">Poupança</option>
+                    <option value="salario">Salário</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="listagemcontabancaria.html" class="btn btn-cancelar">Cancelar</a>
+    </form>
+</body>
+</html>
+
