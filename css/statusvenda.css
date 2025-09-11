@@ -105,3 +105,25 @@ tbody tr:nth-child(even) {
 .status-pendente::before { background-color: #facc15; } /* Amarelo */
 .status-aprovado::before { background-color: #22c55e; } /* Verde */
 .status-recusado::before { background-color: #ef4444; } /* Vermelho */
+
+/* === Barra de Pesquisa === */
+.search-box {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
