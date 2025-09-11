@@ -64,11 +64,20 @@ tr:hover {
     background-color: #218838;
 }
 
-/* Botão azul */
-.btn-primary {
-    background-color: #007bff;
-    color: white;
+/* Botão cadastro pequeno (não ocupa a largura toda) */
+.btn-cadastro {
+  width: 80px;
+  height: 40px;
+  border-radius: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  background: #56c0eb;
+  color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
 }
-.btn-primary:hover {
-    background-color: #0056b3;
+.btn-cadastro:hover {
+  background: #3f93b4;
+  color: #fff;
 }
