@@ -1,3 +1,21 @@
+body{
+    background:whitesmoke;
+}
+
+h1 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-size: 40px;                 
+  font-weight: bold;              
+  color:black;                             
+  text-transform: uppercase;       
+  letter-spacing: 3px;             
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
+  margin-top: 40px;               
+  background: black; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
 .bnt{
     border: none;
     color: whitesmoke;
@@ -14,6 +32,14 @@
 .table {
     border: 3px solid black;
     font-size: 15px;
+    width: 45%;
+   overflow-x: auto;
+   box-shadow: 0 4px 15px gray;
+   border-radius: 12px;
+   font-family: 'Arial', sans-serif;
+   background: #ffffff;
+    
+
 }
 
 .thead {
@@ -22,8 +48,32 @@
     color: black;
 }
 
+.bnt-success{
+    background-color: green;
+    cursor: pointer;
+}
+
 .bnt-success:hover {
     background-color: darkgreen;
     transition: 0.4s;
     box-shadow: 1px 2px 3px;
 }
+
+.bnt-warning {
+    border: none;
+    color: blue;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 0.5%;
+    width: 5%;
+    box-shadow: 1px 2px 3px grey;
+    text-decoration: default;
+    text-align: center;
+}
+
+.bnt-warning:hover {
+    background-color: darkgray;
+    transition: 0.4s;
+    box-shadow: 1px 2px 3px gray;
+}
+
