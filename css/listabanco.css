@@ -24,7 +24,7 @@ h1 {
     padding: 0.5%;
     width: 5%;
     box-shadow: 1px 2px 3px grey;
-    text-decoration: default;
+    text-decoration: none;
     text-align: center;
 
 }
@@ -76,4 +76,3 @@ h1 {
     transition: 0.4s;
     box-shadow: 1px 2px 3px gray;
 }
-
