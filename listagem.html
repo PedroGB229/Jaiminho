@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Listagem de Clientes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+    }
+    .btn {
+      padding: 10px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .btn:hover {
+      background-color: #1976D2;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Listagem de Clientes</h1>
+
+  <!-- Botão para voltar ao cadastro -->
+  <button onclick="window.location.href='cliente.html'" class="btn">➕ Novo Cliente</button>
+
+  <!-- Campo de busca -->
+  <input type="text" id="busca" placeholder="Buscar por nome, e-mail ou telefone..." />
+
+  <!-- Tabela de clientes -->
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th>Data de Criação</th>
+        <th>Data de Atualização</th>
+      </tr>
+    </thead>
+    <tbody id="tabelaClientes">
+      <!-- Conteúdo dinâmico -->
+    </tbody>
+  </table>
+
+  <script>
+    const tabela = document.getElementById("tabelaClientes");
+    const busca = document.getElementById("busca");
+
+    // Carrega os dados do localStorage
+    const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+    // Função para mostrar os dados na tabela
+    function exibirClientes(lista) {
+      tabela.innerHTML = ""; // Limpa a tabela
+      lista.forEach(cliente => {
+        const row = tabela.insertRow();
+        row.innerHTML = `
+          <td>${cliente.codigo}</td>
+          <td>${cliente.nome}</td>
+          <td>${cliente.email}</td>
+          <td>${cliente.telefone}</td>
+          <td>${cliente.dataCriacao}</td>
+          <td>${cliente.dataAtualizacao}</td>
+        `;
+      });
+    }
+
+    // Evento de busca
+    busca.addEventListener("input", function () {
+      const filtro = this.value.toLowerCase();
+      const filtrados = clientes.filter(c =>
+        c.nome.toLowerCase().includes(filtro) ||
+        c.email.toLowerCase().includes(filtro) ||
+        c.telefone.toLowerCase().includes(filtro)
+      );
+      exibirClientes(filtrados);
+    });
+
+    // Exibe todos os clientes ao carregar a página
+    exibirClientes(clientes);
+  </script>
+
+</body>
+</html>
