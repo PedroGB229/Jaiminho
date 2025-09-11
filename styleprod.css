@@ -1,0 +1,145 @@
+/* ===== Estilo geral ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f4f9;
+}
+
+h1 {
+  color: #333;
+}
+
+/* ===== Formulário ===== */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* ===== Botões genéricos ===== */
+.btn {
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Botão cadastro pequeno (não ocupa a largura toda) */
+.btn-cadastro {
+  width: 80px;
+  height: 40px;
+  border-radius: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  background: #56c0eb;
+  color: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+.btn-cadastro:hover {
+  background: #3f93b4;
+  color: #fff;
+}
+
+/* Div acima da tabela para alinhar o botão */
+.topo-tabela {
+  width: 80%;           /* mesma largura da tabela */
+  margin: 0 auto 10px;  /* centralizado horizontalmente */
+  text-align: left;     /* botão à esquerda */
+}
+
+/* Botão voltar */
+.btn-voltar {
+  width: 80px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  background: #555;
+  color: #fff;
+}
+.btn-voltar:hover {
+  background: #333;
+}
+
+/* Botões coloridos */
+.btn-warning {
+  background-color: rgb(49, 229, 235);
+}
+.btn-warning:hover {
+  background-color: rgb(46, 192, 197);
+  transition: 0.3s;
+  box-shadow: 1px 2px 2px rgb(30, 27, 27);
+}
+
+.btn-primary {
+  background-color: rgb(12, 148, 211);
+}
+.btn-primary:hover {
+  background-color: rgb(12, 127, 181);
+  transition: 0.3s;
+  box-shadow: 1px 2px 2px gray;
+}
+
+/* ===== Tabela ===== */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 8px rgba(8, 10, 14, 0.178);
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+/* Cabeçalho da tabela */
+th {
+  background-color: rgb(106, 187, 224); 
+  color: white;
+  font-weight: bold;
+}
+
+/* Linhas alternadas */
+tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff; 
+}
+
+/* Hover na linha */
+tr:hover {
+  background-color: rgb(167, 187, 188); 
+  transition: 0.3s;
+} 
