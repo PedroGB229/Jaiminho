@@ -1,0 +1,303 @@
+/* Fonte elegante e corpo da página */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #f5f6fa;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Container do formulário */
+
+.form-container {
+    background-color: #1f1f2f;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+
+/* Título */
+
+h1 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+    color: #f5f6fa;
+    letter-spacing: 1px;
+}
+
+
+/* Input container */
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+
+/* Inputs */
+
+.input-container input {
+    width: 100%;
+    padding: 18px 45px 18px 15px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #2b2b3f;
+    color: #f5f6fa;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+
+/* Foco no input */
+
+.input-container input:focus {
+    border-color: #44bd32;
+    box-shadow: 0 0 8px rgba(68, 189, 50, 0.5);
+    outline: none;
+}
+
+
+/* Floating label */
+
+.input-container label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-container input:focus+label,
+.input-container input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 12px;
+    font-size: 14px;
+    color: #44bd32;
+    background-color: #1f1f2f;
+    padding: 0 5px;
+}
+
+
+/* Ícones CSS com pseudo-elementos */
+
+.input-container::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Ícone de Código - ID */
+
+.input-container.codico::after {
+    background: linear-gradient(45deg, #40739e 25%, transparent 25%) center/12px 12px repeat;
+    border-radius: 3px;
+}
+
+
+/* Ícone de Nome - Usuário */
+
+.input-container.nome::after {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-container.nome::before {
+    content: '';
+    width: 22px;
+    height: 12px;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(8%);
+}
+
+
+/* Ícone de Email */
+
+.input-container.email::after {
+    width: 22px;
+    height: 14px;
+    border: 2px solid #aaa;
+    border-radius: 2px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-container.email::before {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 7px solid #aaa;
+    transform: translateY(-60%);
+}
+
+
+/* Ícone de Telefone */
+
+.input-container.telefone::after {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #aaa;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* Ícone de Calendário */
+
+.input-container.data::after {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 3px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-container.data::before {
+    content: '';
+    width: 2px;
+    height: 6px;
+    background: #aaa;
+    position: absolute;
+    right: 19px;
+    top: 38%;
+}
+
+
+/* Botão Cadastrar */
+
+.cadastrar {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #44bd32, #2f3640);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+.cadastrar:hover {
+    background: linear-gradient(135deg, #2f3640, #44bd32);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Container dos dois botões secundários */
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* Adiciona um espaço entre os botões */
+}
+
+
+/* Estilo para os links que funcionam como botões */
+
+.button-group a {
+    flex: 1;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    /* Remove o sublinhado padrão do link */
+    text-align: center;
+    /* Centraliza o texto */
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Estilo específico para o botão Voltar */
+
+.voltar {
+    background: linear-gradient(135deg, #d35400, #c0392b);
+}
+
+.voltar:hover {
+    background: linear-gradient(135deg, #c0392b, #d35400);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Estilo específico para o botão Lista */
+
+.lista {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.lista:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Responsividade */
+
+@media (max-width: 550px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+    .input-container input {
+        font-size: 16px;
+        padding: 15px 40px 15px 12px;
+    }
+    .cadastrar,
+    .button-group a {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
