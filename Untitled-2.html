@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Categoria de Marca</title>
+    <style>
+        /* Estilos básicos para formatação da página */
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        }
+        #form, #list {
+        display: none; /* Esconde as seções inicialmente */
+        }
+        table {
+        width: 100%;
+        morder-collapse: collapse; /* Tira os espaços entre as células da tabela */
+        }
+        th, td {
+        border: 1px solid #ccc; /* Borda das células */
+        padding: 8px;           /* Espaçamento interno */
+        text-align: left;       /* Alinhamento do texto à esquerda */
+        }
+        th {
+        background: #f0f0f0;     /* Cor de fundo do cabeçalho da tabela */
+        }
+        button {
+        margin: 5px 0;           /* Espaço entre os botões */
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Categoria de Marca</h1>
+
+    <!-- Seção de listagem de categorias -->
+    <div id="list">
+        <button id="btn-new">Novo</button> <!-- Botão para ir ao formulário -->
+        <button id="btn-clear">Limpar Tudo</button> <!-- Botão para apagar todos os itens da lista -->
+        <table>
+        <thead>
+        <tr>
+       <th>Código</th>
+       <th>Nome</th>
+       <th>Descrição</th>
+       <th>Data de Criação</th>
+      <th>Data de Atualização</th>
+      </tr>
+      </thead>
+      <tbody id="table-body"><!-- Corpo da tabela onde os itens serão inseridos--></tbody>
+        </table>
+    </div>
+
+    <!-- Seção do formulário de cadastro -->
+    <div id="form">
+        <!-- Cada campo do formulário com seu respectivo ID -->
+        <label>Código: <input type="text" id="codigo"></label><br><br>
+        <label>Nome: <input type="text" id="nome"></label><br><br>
+        <label>Descrição: <input type="text" id="descricao"></label><br><br>
+        <label>Data de Criação: <input type="datetime-local" id="createdAt"></label><br><br>
+        <label>Data de Atualização: <input type="datetime-local" id="updatedAt"></label><br><br>
+
+        <button id="btn-save">Salvar</button> <!-- Botão para salvar os dados digitados -->
+        <button id="btn-back">Voltar</button> <!-- Botão para voltar para a listagem -->
+    </div>
+
+    <script>
+        //  utilitária para pegar elementos pelo ID de forma mais curta
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        // Array que armazenará os registros temporariamente na memória
+        let categorias = [];
+
+        // Função que mostra a seção de listagem e esconde o formulário
+        function showList() {
+            $('list').style.display = 'block';
+            $('form').style.display = 'none';
+            renderTable(); // Atualiza a tabela ao mostrar a lista
+        }
+
+        // Função que mostra o formulário e esconde a lista
+        function showForm() {
+            $('list').style.display = 'none';
+            $('form').style.display = 'block';
+        }
+
+        // Função que preenche a tabela HTML com os itens do array "categorias"
+        function renderTable() {
+        const tbody = $('table-body');
+        tbody.innerHTML = ''; // Limpa a tabela antes de preencher
+        categorias.forEach(categoria => { // Percorre cada item do array
+        const tr = document.createElement('tr'); // Cria uma nova linha
+        tr.innerHTML = `
+                    <td>${categoria.codigo}</td>
+                    <td>${categoria.nome}</td>
+                    <td>${categoria.descricao}</td>
+                    <td>${categoria.createdAt}</td>
+                    <td>${categoria.updatedAt}</td>
+                `;
+        tbody.appendChild(tr); // Adiciona a linha na tabela
+            });
+        }
+
+        // retorna a data/hora atual formatada 
+        function nowISOForInput() {
+            return new Date().toISOString().slice(0, 16);
+        }
+
+        // Executa assim que o HTML estiver totalmente carregado
+        document.addEventListener('DOMContentLoaded', () => {
+            showList(); // Mostra a lista por padrão ao carregar
+
+            // Botão para abrir o formulário e preparar campos vazios
+            $('btn-new').addEventListener('click', () => {
+                $('codigo').value = '';
+                $('nome').value = '';
+                $('descricao').value = '';
+                $('createdAt').value = nowISOForInput(); // Preenche com data atual
+                $('updatedAt').value = nowISOForInput(); // Preenche com data atual
+                showForm(); // Mostra o formulário
+            });
+
+            // Botão de voltar para a lista
+            $('btn-back').addEventListener('click', showList);
+
+            // Botão para salvar o que foi digitado no formulário
+            $('btn-save').addEventListener('click', () => {
+                const categoria = {
+                    codigo: $('codigo').value,
+                    nome: $('nome').value,
+                    descricao: $('descricao').value,
+                    createdAt: $('createdAt').value,
+                    updatedAt: $('updatedAt').value
+                };
+                categorias.push(categoria); // Adiciona o objeto no array
+                showList(); // Volta para a tela de listagem
+            });
+
+            // Botão para limpar todos os itens da lista
+            $('btn-clear').addEventListener('click', () => {
+                categorias = []; // Limpa o array
+                renderTable();  // Atualiza a tabela (vai ficar vazia)
+            });
+        });
+    </script>
+</body>
+</html>
