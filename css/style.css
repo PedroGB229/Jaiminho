@@ -1,0 +1,155 @@
+/* css/style.css */
+
+/* ------------------ FONTE ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
+
+/* ------------------ BASE ------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', sans-serif;
+  background: url('../img/mordecai-rigby.png') no-repeat center bottom fixed,
+              linear-gradient(to bottom right, #7ec8e3, #d8e7f5);
+  background-size: contain, cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 40px;
+  color: #333;
+}
+
+
+/* ------------------ CONTAINER ------------------ */
+.container {
+  background-color: #ffffffee;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border: 3px solid #5a99d4;
+  position: relative;
+}
+
+/* ------------------ HEADER ------------------ */
+h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #374785;
+  text-shadow: 1px 1px #ffffffaa;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------ FORM ------------------ */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid #a6c8ff;
+  border-radius: 10px;
+  background-color: #f6faff;
+  font-size: 1rem;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #374785;
+  background-color: #eef3fc;
+  outline: none;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+/* ------------------ FEEDBACK ------------------ */
+.feedback {
+  margin-top: 1rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #ef5350;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+form.loading .feedback {
+  display: block;
+  background-color: #8e9aaf;
+}
+
+form .feedback.success {
+  background-color: #44bd32;
+  display: block;
+}
+
+form .feedback.error {
+  background-color: #e84118;
+  display: block;
+}
+
+/* ------------------ BOTÕES ------------------ */
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+
+}
+/* ------------------ MENU INDEX ------------------ */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Botão base */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Botão primário */
+.btn-primary {
+  background-color: #5a99d4;
+  color: #fff;
+  border: 2px solid #5a99d4;
+}
+
+.btn-primary:hover {
+  background-color: #374785;
+  border-color: #374785;
+}
+
+/* Botão secundário */
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+  border: 2px solid #999;
+}
+
+.btn-secondary:hover {
+  background-color: #aaa;
+  border-color: #777;
+}
