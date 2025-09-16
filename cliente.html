@@ -2,85 +2,78 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Cadastro de Clientes</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-    .btn {
-      padding: 10px 15px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Cadastro de Clientes</h1>
-
-  <!-- Botão para ir para a listagem -->
-  <button onclick="window.location.href='listagem.html'" class="btn">📄 Ver Listagem</button>
-
-  <form id="formCliente">
-    <input type="text" id="nome" placeholder="Nome" required />
-    <input type="email" id="email" placeholder="E-mail" required />
-    <input type="tel" id="telefone" placeholder="Telefone" required />
-    <button type="submit" class="btn">Cadastrar</button>
-  </form>
-
+  <title>Cadastro de Cliente</title>
+  <link rel="stylesheet" href="css/style.css" />
   <script>
-    const form = document.getElementById("formCliente");
-
-    // Recupera clientes do localStorage
-    let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
-    let proximoCodigo = clientes.length ? clientes[clientes.length - 1].codigo + 1 : 1;
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const telefone = document.getElementById("telefone").value;
-      const agora = new Date().toLocaleString();
-
-      const cliente = {
-        codigo: proximoCodigo++,
-        nome,
-        email,
-        telefone,
-        dataCriacao: agora,
-        dataAtualizacao: agora
-      };
-
-      clientes.push(cliente);
-      localStorage.setItem("clientes", JSON.stringify(clientes));
-      alert("Cliente cadastrado com sucesso!");
-
-      form.reset();
+    document.addEventListener("DOMContentLoaded", () => {
+      inicializarFormulario("form-cliente");
     });
   </script>
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro de Cliente</h1>
 
+    <form id="form-cliente" novalidate>
+      <!-- NOVOS CAMPOS -->
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o nome" required />
+      </div>
+
+      <div class="form-group">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite o sobrenome" required />
+      </div>
+
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF" required />
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="cnpj">CNPJ</label>
+          <input id="cnpj" name="cnpj" class="form-control" inputmode="numeric" placeholder="00.000.000/0000-00" aria-describedby="cnpj-desc">
+        </div>
+
+      <!-- ENDEREÇO -->
+      <div class="form-group">
+        <label for="cep">CEP:</label>
+        <input type="text" name="cep" id="cep" placeholder="Digite o CEP" />
+      </div>
+
+      <div class="form-group">
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" name="logradouro" id="logradouro" />
+      </div>
+
+      <div class="form-group">
+        <label for="bairro">Bairro:</label>
+        <input type="text" name="bairro" id="bairro" />
+      </div>
+
+      <div class="form-group">
+        <label for="municipio">Município:</label>
+        <input type="text" name="municipio" id="municipio" />
+      </div>
+
+      <div class="form-group">
+        <label for="uf">UF:</label>
+        <input type="text" name="uf" id="uf" maxlength="2" />
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+      <!-- AÇÕES -->
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="reset" class="btn btn-secondary">Limpar</button>
+        <a href="index.html" class="btn btn-secondary">Voltar</a>
+      </div>
+    </form>
+  </main>
+  <script src="js/form.js" defer></script>
 </body>
 </html>
+
